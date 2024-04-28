@@ -12,6 +12,10 @@
     "noEmit": true,
     "outDir": "dist"
   },
-  "include": ["./src"],
+  "include": [
+    "src/**/*.ts",
+    "*.ts",
+    ".eslintrc.js"
+  ],
   "exclude": ["./node_modules"]
 }
