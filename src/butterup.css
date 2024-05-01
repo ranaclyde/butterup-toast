@@ -1,5 +1,3 @@
-/* Based on https://github.com/midudev/la-velada-web-oficial/blob/main/src/components/ui/Toast.astro*/
-
 .toaster {
   font-family:
     ui-sans-serif,
@@ -94,19 +92,38 @@ ol.rack li {
   margin-bottom: 16px;
 }
 
+/* Stacked Toasts Enabled */
+ol.rack.upperstack li {
+  margin-bottom: -35px;
+  transition: all 0.3s ease-in-out;
+}
+
+ol.rack.upperstack li:hover {
+  margin-bottom: 16px;
+  scale: 1.03;
+  transition: all 0.3s ease-in-out;
+}
+
+ol.rack.lowerstack li {
+  margin-top: -35px;
+}
+
+ol.rack.lowerstack {
+ margin-bottom: 0px;
+}
+
 .butteruptoast {
-  align-items: center;
-  background-color: white;
   border-radius: 8px;
-  border: 1px solid hsl(0, 0%, 93%);
   box-shadow: 0 4px 12px #0000001a;
-  color: #282828;
+  font-size: 13px;
+  align-items: center;
   display: flex;
-  font-size: 21px;
-  gap: 6px;
-  max-width: 325px;
-  padding: 15px 20px;
-  text-align: center;
+  padding: 16px;
+  border: 1px solid hsl(0, 0%, 93%);
+  background-color: white;
+  gap: 10px;
+  color: #282828;
+  width: 325px;
 }
 
 .butteruptoast.dismissable {
@@ -133,6 +150,7 @@ ol.rack li {
 .notif .desc .title {
   font-weight: 500;
   line-height: 1.5;
+
 }
 
 .notif .desc .message {
@@ -141,43 +159,43 @@ ol.rack li {
 }
 
 .butteruptoast.success {
-  background-color: #141800;
-  color: hsl(74, 98%, 48%);
-  border: solid 1px hsl(74, 98%, 48%);
+  background-color: #ebfef2;
+  color: hsl(140, 100%, 27%);
+  border: solid 1px hsl(145, 92%, 91%);
 }
 
 .butteruptoast.success .icon svg {
-  fill: hsl(74, 98%, 48%);
+  fill: hsl(140, 100%, 27%);
 }
 
 .butteruptoast.error .icon svg {
-  fill: hsl(0, 84%, 48%);
+  fill: hsl(0, 100%, 27%);
 }
 
 .butteruptoast.warning .icon svg {
-  fill: hsl(50, 100%, 42%);
+  fill: hsl(50, 100%, 27%);
 }
 
 .butteruptoast.info .icon svg {
-  fill: hsl(210, 100%, 44%);
+  fill: hsl(210, 100%, 27%);
 }
 
 .butteruptoast.error {
-  background-color: hsl(0, 100%, 5%);
-  color: hsl(0, 84%, 48%);
-  border: solid 1px hsl(0, 84%, 48%);
+  background-color: #fef0f0;
+  color: hsl(0, 100%, 27%);
+  border: solid 1px hsl(0, 92%, 91%);
 }
 
 .butteruptoast.warning {
-  background-color: hsl(50, 96%, 9%);
-  color: hsl(50, 100%, 42%);
-  border: solid 1px hsl(50, 100%, 42%);
+  background-color: #fffdf0;
+  color: hsl(50, 100%, 27%);
+  border: solid 1px hsl(50, 92%, 91%);
 }
 
 .butteruptoast.info {
-  background-color: hsl(210, 100%, 11%);
-  color: hsl(210, 100%, 44%);
-  border: solid 1px hsl(210, 100%, 44%);
+  background-color: #f0f8ff;
+  color: hsl(210, 100%, 27%);
+  border: solid 1px hsl(210, 92%, 91%);
 }
 
 /* Entrance animations */
@@ -237,66 +255,80 @@ ol.rack li {
   styles by setting the theme: variable per toast
 */
 
-/* Glass */
+/* Dark theme */
+/* Based on https://github.com/midudev/la-velada-web-oficial/blob/main/src/components/ui/Toast.astro*/
+.butteruptoast.dark.success {
+  background-color: #141800;
+  color: hsl(74, 98%, 48%);
+  border: solid 1px hsl(74, 98%, 48%);
+}
 
+.butteruptoast.dark.success .icon svg {
+  fill: hsl(74, 98%, 48%);
+}
+
+.butteruptoast.dark.error .icon svg {
+  fill: hsl(0, 84%, 48%);
+}
+
+.butteruptoast.dark.warning .icon svg {
+  fill: hsl(50, 100%, 42%);
+}
+
+.butteruptoast.dark.info .icon svg {
+  fill: hsl(210, 100%, 44%);
+}
+
+.butteruptoast.dark.error {
+  background-color: hsl(0, 100%, 5%);
+  color: hsl(0, 84%, 48%);
+  border: solid 1px hsl(0, 84%, 48%);
+}
+
+.butteruptoast.dark.warning {
+  background-color: hsl(50, 96%, 9%);
+  color: hsl(50, 100%, 42%);
+  border: solid 1px hsl(50, 100%, 42%);
+}
+
+.butteruptoast.dark.info {
+  background-color: hsl(210, 100%, 11%);
+  color: hsl(210, 100%, 44%);
+  border: solid 1px hsl(210, 100%, 44%);
+}
+
+/* Glass theme */
 .butteruptoast.glass {
   background-color: rgba(255, 255, 255, 0.42) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none;
-  box-shadow: 0 4px 12px #0000001a;
-  color: #282828;
 }
 
 .butteruptoast.glass.success {
   background-color: rgba(235, 254, 242, 0.42) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: 0 4px 12px #0000001a;
   color: hsl(140, 100%, 27%);
 }
 
 .butteruptoast.glass.error {
   background-color: rgba(254, 240, 240, 0.42) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: 0 4px 12px #0000001a;
   color: hsl(0, 100%, 27%);
 }
 
 .butteruptoast.glass.warning {
   background-color: rgba(255, 253, 240, 0.42) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: 0 4px 12px #0000001a;
   color: hsl(50, 100%, 27%);
 }
 
 .butteruptoast.glass.info {
   background-color: rgba(240, 248, 255, 0.42) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: 0 4px 12px #0000001a;
   color: hsl(210, 100%, 27%);
 }
 
-/* brutalist */
+/* Brutalist theme */
 .butteruptoast.brutalist {
   border-radius: 0px;
-  box-shadow: 0 4px 12px #0000001a;
   border: solid 2px #282828;
-  font-size: 13px;
-  align-items: center;
-  display: flex;
-  padding: 16px;
-  background-color: white;
-  gap: 6px;
-  color: #282828;
-  width: 325px;
 }
 
 .butteruptoast.brutalist.success {
