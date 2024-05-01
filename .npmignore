@@ -1,6 +1,8 @@
-/node_modules/
-/src
-/.vscode
+node_modules/*
+src/*
+.vscode/*
+web/*
+web/README.md
 
 tsconfig.json
 tsup.config.ts
