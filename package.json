@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Matías E Sanhueza <manoloesanhueza@gmail.com>",
   "description": "The TypeScript notification plugin based on the dgtlss/butterup repository",
+  "homepage": "https://butterup-toast.netlify.app/",
   "keywords": [
     "butterup",
     "typescript",

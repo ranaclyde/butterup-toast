@@ -6,3 +6,5 @@ web/README.md
 
 tsconfig.json
 tsup.config.ts
+.eslintignore
+.eslintrc.js
