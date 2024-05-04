@@ -4,8 +4,7 @@ export const butterup: ButterupProps = {
   options: {
     maxToasts: 3,
     toastLife: 3000,
-    currentToasts: 0,
-    stackedToasts: true
+    currentToasts: 0
   },
   toast({ title, message, type, location, icon, theme, dismissable }) {
     let toaster = document.getElementById('toaster')

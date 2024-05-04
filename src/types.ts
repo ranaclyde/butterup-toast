@@ -30,6 +30,4 @@ export interface ButterupOptions {
   toastLife: number
   /** Current number of toasts on the screen */
   currentToasts: number
-  /** Whether or not to stack toasts */
-  stackedToasts: boolean
 }
