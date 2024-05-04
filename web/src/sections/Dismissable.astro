@@ -1,0 +1,49 @@
+---
+import { Code } from 'astro/components'
+
+import Button from '@/components/Button.astro'
+
+const code = `
+  butterup.toast(
+    title: 'Hi there!',
+    message: 'Click on me to make me disappear.',
+    location: 'top-right', // --> default
+    type: 'info', // --> default is null
+    icon: true, // --> default is false
+    dismissable: true // default is false
+  )
+
+`
+---
+
+<section class="max-w-3xl mx-auto my-10">
+  <h3 class="text-2xl font-semibold">Dismissable toast</h3>
+  <p class="mt-2">
+    If this option is true, the toast can be closed when it is clicked.
+  </p>
+  <div class="flex flex-col items-center">
+    <Code
+      code={code}
+      lang="ts"
+      theme="dracula"
+      class="my-5 rounded-xl w-full text-sm lg:text-base"
+    />
+    <Button id="dismissable" class="w-28">Try it!</Button>
+  </div>
+</section>
+
+<script>
+  import { butterup } from '../../../src'
+
+  const tryItBtn = document.querySelector('#dismissable') as HTMLButtonElement
+
+  tryItBtn.onclick = () => {
+    butterup.toast({
+      title: 'Hi there!',
+      message: 'Click on me to make me disappear.',
+      type: 'info',
+      icon: true,
+      dismissable: true
+    })
+  }
+</script>

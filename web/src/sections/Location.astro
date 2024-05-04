@@ -1,0 +1,104 @@
+---
+import { Code } from 'astro/components'
+
+import Button from '@/components/Button.astro'
+
+const code = `
+  butterup.toast(
+    title: 'Hello World!',
+    message: 'This is a toast notification.',
+    location: 'top-right' // --> default
+  )
+
+`
+---
+
+<section class="max-w-3xl mx-auto my-10">
+  <h3 class="text-2xl font-semibold">Location options</h3>
+  <p class="mt-2">
+    ButterupToast allows you to render toast notifications in all four corners
+    of the screen, as well as the center. The location option is a string that
+    can be set to one of the following values:
+  </p>
+  <div class="flex flex-col items-center">
+    <Code
+      code={code}
+      lang="ts"
+      theme="dracula"
+      class="my-5 rounded-xl w-full text-sm lg:text-base"
+    />
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+      <Button id="topLeft">top-left</Button>
+      <Button id="topCenter">top-center</Button>
+      <Button id="topRight">top-right</Button>
+      <Button id="bottomLeft">bottom-left</Button>
+      <Button id="bottomCenter">bottom-center</Button>
+      <Button id="bottomRight">bottom-right</Button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { butterup } from '../../../src'
+
+  const topLeftBtn = document.querySelector('#topLeft') as HTMLButtonElement
+  const topCenterBtn = document.querySelector('#topCenter') as HTMLButtonElement
+  const topRightBtn = document.querySelector('#topRight') as HTMLButtonElement
+  const bottomLeftBtn = document.querySelector(
+    '#bottomLeft'
+  ) as HTMLButtonElement
+  const bottomCenterBtn = document.querySelector(
+    '#bottomCenter'
+  ) as HTMLButtonElement
+  const bottomRightBtn = document.querySelector(
+    '#bottomRight'
+  ) as HTMLButtonElement
+
+  topLeftBtn.onclick = () => {
+    butterup.toast({
+      title: 'Top Left',
+      message: 'This is a toast in the top left',
+      location: 'top-left'
+    })
+  }
+
+  topCenterBtn.onclick = () => {
+    butterup.toast({
+      title: 'Top Center',
+      message: 'This is a toast in the top center',
+      location: 'top-center'
+    })
+  }
+
+  topRightBtn.onclick = () => {
+    butterup.toast({
+      title: 'Top Right',
+      message: 'This is a toast in the top right',
+      location: 'top-right'
+    })
+  }
+
+  bottomLeftBtn.onclick = () => {
+    butterup.toast({
+      title: 'Bottom Left',
+      message: 'This is a toast in the bottom left',
+      location: 'bottom-left'
+    })
+  }
+
+  bottomCenterBtn.onclick = () => {
+    butterup.toast({
+      title: 'Bottom Center',
+      message: 'This is a toast in the bottom center',
+      location: 'bottom-center'
+    })
+  }
+
+  bottomRightBtn.onclick = () => {
+    butterup.toast({
+      title: 'Bottom Right',
+      message: 'This is a toast in the bottom right',
+      location: 'bottom-right'
+    })
+  }
+</script>

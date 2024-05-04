@@ -1,0 +1,84 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import CustomTheme from '@/sections/CustomTheme.astro'
+import DarkTheme from '@/sections/DarkTheme.astro'
+import Dismissable from '@/sections/Dismissable.astro'
+import Location from '@/sections/Location.astro'
+import OtherConfiguration from '@/sections/OtherConfiguration.astro'
+import TypesAndIcons from '@/sections/TypesAndIcons.astro'
+import Usage from '@/sections/Usage.astro'
+import { Code } from 'astro/components'
+import { Image } from 'astro:assets'
+import { version } from '../../../package.json'
+import Github from '@/components/Github.astro'
+import ExternalLink from '@/components/ExternalLink.astro'
+
+const code = `npm install butterup-toast`
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="px-4 lg:px-0 my-4">
+    <header class="max-w-3xl mx-auto flex flex-col items-center pt-10">
+      <Image
+        src="/bt-logo.svg"
+        alt="Butterup Toast Logo"
+        width="100"
+        height="100"
+      />
+
+      <h1 class="font-semibold text-4xl pb-2">Butterup Toast</h1>
+      <h2 class="pb-5 text-center">
+        The Customisable & Lightweight TypeScript Toasts based on the
+        <ExternalLink to="https://github.com/dgtlss/butterup"
+          >dgtlss/butterup</ExternalLink
+        >
+        repository
+      </h2>
+      <Code
+        code={code}
+        lang="sh"
+        theme="dracula"
+        wrap
+        class="my-5 rounded-md text-sm px-10 py-2"
+      />
+      <div class="flex items-center justify-center gap-x-2 mb-4">
+        <span class="rounded bg-black/10 px-2 py-1 text-xs font-medium"
+          >v.{version}</span
+        >
+        <a
+          aria-label="View website repository on Github"
+          href="https://github.com/ranaclyde/butterup-toast"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded bg-black/10 px-2 py-1 text-xs font-medium transition-colors ease-in-out hover:bg-black/20"
+        >
+          <Github class="size-4" />
+        </a>
+      </div>
+    </header>
+    <Usage />
+    <Location />
+    <TypesAndIcons />
+    <DarkTheme />
+    <CustomTheme />
+    <Dismissable />
+    <OtherConfiguration />
+    <footer
+      class="mx-auto flex flex-col max-w-3xl items-center justify-center px-4 pb-10 pt-15 text-center text-sm"
+    >
+      <p>
+        Based on
+        <ExternalLink to="https://butterup.nlanger.dev/"
+          >Nathan Langer Butterup</ExternalLink
+        >
+      </p>
+
+      <p>
+        Created with ❤ by
+        <ExternalLink to="https://www.linkedin.com/in/emanuel-sanhueza/"
+          >Matias Sanhueza</ExternalLink
+        >
+      </p>
+    </footer>
+  </main>
+</Layout>

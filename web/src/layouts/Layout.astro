@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/bt-logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#fcf8dd]">
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @import '../../../src/butterup.css';
+
+  .butteruptoast.stroke {
+    border-radius: 0px;
+    border: solid 2px #282828;
+  }
+
+  /* Rich toast configuration */
+  .butteruptoast.stroke.success {
+    background-color: #ebfef2;
+    color: hsl(140, 100%, 27%);
+    border: solid 2px hsl(140, 100%, 27%);
+  }
+  .butteruptoast.stroke.error {
+    background-color: #fef0f0;
+    color: hsl(0, 100%, 27%);
+    border: solid 2px hsl(0, 100%, 27%);
+  }
+  .butteruptoast.stroke.warning {
+    background-color: #fffdf0;
+    color: hsl(50, 100%, 27%);
+    border: solid 2px hsl(50, 100%, 27%);
+  }
+  .butteruptoast.stroke.info {
+    background-color: #f0f8ff;
+    color: hsl(210, 100%, 27%);
+    border: solid 2px hsl(210, 100%, 27%);
+  }
+</style>
