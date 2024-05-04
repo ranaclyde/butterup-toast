@@ -7,7 +7,7 @@ export const butterup: ButterupProps = {
     currentToasts: 0,
     stackedToasts: true
   },
-  toast({ title, message, type, location, icon, theme, dismissible }) {
+  toast({ title, message, type, location, icon, theme, dismissable }) {
     let toaster = document.getElementById('toaster')
     if (toaster == null) {
       // toaster doesn't exist, create it
@@ -152,9 +152,9 @@ export const butterup: ButterupProps = {
       toastDesc.appendChild(toastMessage)
     }
 
-    if (dismissible != null && dismissible) {
-      // Add a class to the toast to make it dismissible
-      toast.className += ' dismissible'
+    if (dismissable != null && dismissable) {
+      // Add a class to the toast to make it dismissable
+      toast.className += ' dismissable'
       // when the item is clicked on, remove it from the DOM
       toast.addEventListener('click', () => {
         butterup.despawnToast(toast.id)

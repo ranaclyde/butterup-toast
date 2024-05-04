@@ -14,7 +14,7 @@ export interface ToastOptions {
     | 'bottom-left'
   icon?: boolean
   theme?: string
-  dismissible?: boolean
+  dismissable?: boolean
 }
 
 export interface ButterupProps {
